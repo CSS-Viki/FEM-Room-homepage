@@ -29,12 +29,13 @@ Your users should be able to:
 - Flexbox
 - Mobile-first workflow
 
+#### Where you can find my work
 
-- Live Site URL: [Live Site](https://room-homepage.onrender.com)
+Live Site URL: [Live Site](https://room-homepage.onrender.com)
 
-- Frontend Mentor - [CSS-Viki](https://www.frontendmentor.io/profile/CSS-Viki)
+Frontend Mentor - [CSS-Viki](https://www.frontendmentor.io/profile/CSS-Viki)
 
-- Twitter - [Viki Wainaina](https://www.twitter.com/vykiddeh_)
+Twitter - [Viki Wainaina](https://www.twitter.com/vykiddeh_)
 
 Built with ❤️ by [Viki](https://www.twitter.com/vykiddeh_)🥹
 
