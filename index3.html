@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./sass/style.css" />
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Room homepage</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="menu-bar">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </div>
+
+        <div class="logo">
+          <h1>room</h1>
+        </div>
+
+        <ul class="nav-lists">
+          <li><a href="#">home</a></li>
+          <li><a href="#">shop</a></li>
+          <li><a href="#">about</a></li>
+          <li><a href="#">contact</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero-section">
+        <div class="hero">
+          <picture>
+            <source
+              media="(min-width: 767px)"
+              srcset="./images/desktop-image-hero-3.jpg"
+            />
+
+            <img
+              class="mobile-image mobile-image-hero"
+              src="./images/mobile-image-hero-3.jpg"
+              alt="mobile image hero 3"
+            />
+          </picture>
+
+          <div class="arrow-buttons">
+            <img
+              class="previous"
+              src="./images/icon-angle-left.svg"
+              alt="angle left icon"
+              onclick="goToPage('index2.html')"
+            />
+            <img
+              class="next"
+              src="./images/icon-angle-right.svg"
+              alt="angle right icon"
+              onclick="goToPage('index.html')"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="intro">
+        <h1 class="headline">We are available all across the globe</h1>
+        <p class="job-description">
+          With stores all over the world, it's easy for you to find furniture
+          for your home or place of business. Locally, we’re in most major
+          cities throughout the country. Find the branch nearest you using our
+          store locator. Any questions? Don't hesitate to contact us today.
+        </p>
+        <h2>
+          Shop now
+          <span><img src="./images/icon-arrow.svg" alt="arrow icon" /></span>
+        </h2>
+      </section>
+    </main>
+
+    <section class="about">
+      <div class="images">
+        <img class="image-dark" src="./images/image-about-dark.jpg" alt="" />
+      </div>
+
+      <div class="about-information">
+        <h1 class="tagline">About our furniture</h1>
+        <p class="furniture-description">
+          Our multifunctional collection blends design and function to suit your
+          individual taste. Make each room unique, or pick a cohesive theme that
+          best express your interests and what inspires you. Find the furniture
+          pieces you need, from traditional to contemporary styles or anything
+          in between. Product specialists are available to help you create your
+          dream space.
+        </p>
+      </div>
+
+      <div class="images">
+        <img class="image-light" src="./images/image-about-light.jpg" alt="" />
+      </div>
+    </section>
+
+    <!-- ATTRIBUTION -->
+    <footer class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io/profile/CSS-Viki" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://twitter.com/vykiddeh_" target="_blank">Viki Wainaina</a>.
+    </footer>
+  </body>
+</html>
