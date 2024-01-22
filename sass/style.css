@@ -28,17 +28,17 @@ button {
   font-family: "League Spartan", sans-serif;
 }
 
-.body-padding {
-  width: calc(100% - 3rem);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-.description, main section .about-information .furniture-description, main section .job-description {
+.description, .about .about-information .furniture-description, main .intro .job-description {
   line-height: 1.3;
   color: hsl(0, 0%, 63%);
   font-weight: 500;
   margin-block: 1em 2em;
+}
+
+.intro,
+.about {
+  width: calc(100% - 3rem);
+  margin: 0 auto;
 }
 
 header {
@@ -110,12 +110,16 @@ header nav .nav-lists.open-nav-list {
 }
 
 main {
+  margin-block-end: 50px;
+}
+main .hero {
   position: relative;
   margin-block-end: 50px;
 }
 main .hero .arrow-buttons {
   position: absolute;
   right: 0;
+  bottom: 0;
   display: flex;
   justify-content: center;
   gap: 40px;
@@ -124,15 +128,19 @@ main .hero .arrow-buttons {
 }
 main .hero .arrow-buttons img {
   width: 8px;
+  transition: all 0.4s;
   cursor: pointer;
 }
-main section .headline {
+main .hero .arrow-buttons img:hover {
+  opacity: 0.6;
+}
+main .intro .headline {
   font-size: clamp(2rem, 1.7273rem + 1.4545vw, 3rem);
   font-weight: 700;
   color: hsl(0, 0%, 0%);
   letter-spacing: -1px;
 }
-main section h2 {
+main .intro h2 {
   letter-spacing: 10px;
   font-weight: 500;
   font-size: 1rem;
@@ -141,7 +149,15 @@ main section h2 {
   align-items: center;
   gap: 20px;
 }
-main section .about-information .tagline {
+main .intro h2 span {
+  cursor: pointer;
+  transition: all 0.4s;
+}
+main .intro h2 span:hover {
+  transform: translateX(10px);
+}
+
+.about .about-information .tagline {
   color: hsl(0, 0%, 0%);
   font-size: clamp(0.8rem, 0.6091rem + 1.0182vw, 1rem);
   font-weight: 700;
@@ -160,6 +176,10 @@ main section .about-information .tagline {
 }
 
 @media (min-width: 600px) {
+  .intro,
+  .about {
+    width: 100%;
+  }
   header {
     padding: 2.5em;
   }
@@ -192,6 +212,19 @@ main section .about-information .tagline {
   main .hero-section {
     width: 55%;
   }
+  main .hero-section .hero {
+    margin-block-end: 0;
+  }
+  main .hero-section .hero .arrow-buttons {
+    width: 150px;
+    right: -150px;
+    gap: 20px;
+    justify-content: space-evenly;
+    padding: 1em 0;
+  }
+  main .hero-section .hero .arrow-buttons img {
+    width: 15px;
+  }
   main .intro {
     display: flex;
     flex-direction: column;
@@ -204,30 +237,6 @@ main section .about-information .tagline {
   }
   main .intro .job-description {
     margin-block-end: 1em;
-  }
-  main .intro h2 {
-    cursor: pointer;
-  }
-  main .intro h2 span {
-    cursor: pointer;
-    transition: all 0.4s;
-  }
-  main .intro h2 span:hover {
-    transform: translateX(10px);
-  }
-  .hero .arrow-buttons {
-    width: 150px;
-    left: 55%;
-    bottom: 0;
-    gap: 20px;
-    justify-content: space-evenly;
-    padding: 1em 0;
-  }
-  .hero .arrow-buttons img {
-    width: 15px;
-  }
-  .hero .arrow-buttons img:hover {
-    opacity: 0.6;
   }
   .about {
     display: flex;
@@ -244,7 +253,7 @@ main section .about-information .tagline {
     display: flex;
     flex: 1;
     flex-direction: column;
-    padding-inline: 3em;
+    margin-inline: 3em;
     gap: 10px;
   }
   .about .about-information .tagline {
@@ -253,6 +262,7 @@ main section .about-information .tagline {
   }
   .about .about-information .furniture-description {
     letter-spacing: -0.5px;
+    line-height: 1.4;
     font-size: 0.9rem;
     margin-block: 0;
   }

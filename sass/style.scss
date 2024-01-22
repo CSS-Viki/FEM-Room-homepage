@@ -32,18 +32,19 @@ textarea,
 button {
   font-family: $font-default;
 }
-.body-padding {
-  width: calc(100% - 3rem);
-  max-width: 600px;
-  margin: 0 auto;
-}
 .description {
   line-height: 1.3;
   color: $Dark-Gray;
   font-weight: 500;
   margin-block: 1em 2em;
 }
+.intro,
+.about {
+  width: calc(100% - 3rem);
+  margin: 0 auto;
+}
 
+// HEADER
 header {
   position: fixed;
   width: 100%;
@@ -89,6 +90,7 @@ header {
       transform: translateY(-8px) rotate(-45deg);
       width: 100%;
     }
+
     .logo {
       display: flex;
       flex: 1;
@@ -120,14 +122,20 @@ header {
     }
   }
 }
+
+// MAIN
 main {
-  position: relative;
   margin-block-end: 50px;
+
   .hero {
+    position: relative;
+    margin-block-end: 50px;
+
     .arrow-buttons {
       position: absolute;
       right: 0;
-      
+      bottom: 0;
+
       display: flex;
       justify-content: center;
       gap: 40px;
@@ -136,12 +144,16 @@ main {
 
       img {
         width: 8px;
+        transition: $transition;
         cursor: pointer;
+      }
+      img:hover {
+        opacity: 0.6;
       }
     }
   }
 
-  section {
+  .intro {
     .headline {
       font-size: clamp(2rem, 1.7273rem + 1.4545vw, 3rem);
       font-weight: 700;
@@ -160,19 +172,32 @@ main {
       display: flex;
       align-items: center;
       gap: 20px;
+
+      // cursor: pointer;
+      span {
+        cursor: pointer;
+        transition: $transition;
+      }
+      span:hover {
+        transform: translateX(10px);
+      }
     }
-    .about-information {
-      .tagline {
-        color: $Black;
-        font-size: clamp(0.8rem, 0.6091rem + 1.0182vw, 1rem);
-        font-weight: 700;
-        text-transform: uppercase;
-        margin-block-start: 50px;
-        letter-spacing: 4px;
-      }
-      .furniture-description {
-        @extend .description;
-      }
+  }
+}
+
+// ABOUT
+.about {
+  .about-information {
+    .tagline {
+      color: $Black;
+      font-size: clamp(0.8rem, 0.6091rem + 1.0182vw, 1rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-block-start: 50px;
+      letter-spacing: 4px;
+    }
+    .furniture-description {
+      @extend .description;
     }
   }
 }
@@ -186,6 +211,10 @@ main {
 }
 
 @media (min-width: 600px) {
+  .intro,
+  .about {
+    width: 100%;
+  }
   header {
     padding: 2.5em;
 
@@ -223,7 +252,23 @@ main {
 
     .hero-section {
       width: 55%;
+
+      .hero {
+        margin-block-end: 0;
+        .arrow-buttons {
+          width: 150px;
+          right: -150px;
+          gap: 20px;
+          justify-content: space-evenly;
+          padding: 1em 0;
+
+          img {
+            width: 15px;
+          }
+        }
+      }
     }
+
     .intro {
       display: flex;
       flex-direction: column;
@@ -237,38 +282,9 @@ main {
       .job-description {
         margin-block-end: 1em;
       }
-
-      h2 {
-        cursor: pointer;
-
-        span {
-          cursor: pointer;
-          transition: $transition;
-        }
-        span:hover {
-          transform: translateX(10px);
-        }
-      }
     }
   }
-  .hero {
-    .arrow-buttons {
-      width: 150px;
 
-      left: 55%;
-      bottom: 0;
-      gap: 20px;
-      justify-content: space-evenly;
-      padding: 1em 0;
-
-      img {
-        width: 15px;
-        &:hover {
-          opacity: 0.6;
-        }
-      }
-    }
-  }
   .about {
     display: flex;
     align-items: center;
@@ -285,7 +301,7 @@ main {
       display: flex;
       flex: 1;
       flex-direction: column;
-      padding-inline: 3em;
+      margin-inline: 3em;
       gap: 10px;
 
       .tagline {
@@ -294,6 +310,7 @@ main {
       }
       .furniture-description {
         letter-spacing: -0.5px;
+        line-height: 1.4;
         font-size: 0.9rem;
         margin-block: 0;
       }
